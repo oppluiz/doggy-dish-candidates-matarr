@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: unset;
+    font-weight: unset;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 240 5% 96%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 6% 80%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.2rem;
+    --success: 196 52% 74%;
+    --warning: 34 89% 85%;
+    --error: 10 100% 86%;
+    /* New primary background color (HSL of #D9D9D9) */
+    --primary-background: 60 100% 98%;
+  }
+
+  .container-small {
+    @apply max-w-[100vw] px-[0.875rem] md:px-0 md:max-w-[53.75rem] mx-auto;
+  }
+
+  /* Removed [data-theme='dark'] block to keep only light mode */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+  }
+}
+
+@layer components {
+  .payload-richtext strong {
+    font-weight: 700 !important;
+  }
+  /* Ensure lists render with bullets/numbers inside RichText */
+  .payload-richtext ul {
+    @apply list-disc list-outside pl-6 my-3;
+  }
+  .payload-richtext ol {
+    @apply list-decimal list-outside pl-6 my-3;
+  }
+  .payload-richtext li {
+    @apply my-1;
+  }
+  /* Nested lists spacing */
+  .payload-richtext ul ul,
+  .payload-richtext ul ol,
+  .payload-richtext ol ul,
+  .payload-richtext ol ol {
+    @apply my-1;
+  }
+
+  /* Mobile defaults */
+  h2 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: 0.088rem;
+  }
+
+  .tab--content h2,
+  .tab--content h3 {
+    font-weight: 400;
+  }
+
+  ul,
+  li,
+  p,
+  span {
+    font-family: 'Lato';
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+  }
+
+  .payload-richtext ul,
+  .payload-richtext li,
+  .payload-richtext p {
+    margin-bottom: 6px;
+  }
+
+  .payload-richtext > ul,
+  .payload-richtext > li,
+  .payload-richtext > p,
+  .payload-richtext > span,
+  .payload-richtext > h1,
+  .payload-richtext > h2,
+  .payload-richtext > h3,
+  .payload-richtext > h4,
+  .payload-richtext > h5,
+  .payload-richtext > h6 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1211px;
+    width: 100%;
+  }
+
+  .payload-richtext > h3 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+  }
+
+  .toc--container .swiper {
+    overflow: visible !important;
+  }
+
+  .table--container p {
+    max-width: unset !important;
+  }
+
+  .payload-richtext a {
+    text-decoration: underline;
+  }
+
+  p:has(> br:only-child) {
+    line-height: 6px;
+  }
+
+  /* Tailwind breakpoint: md and up */
+  @screen md {
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+    ul,
+    li,
+    p,
+    span {
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+    p:has(> br:only-child) {
+      display: inline;
+    }
+  }
+
+  .alert .payload-richtext p {
+    font-weight: 400;
+  }
+
+  @media only screen and (max-width: 640px) {
+    .tab--content .swiper {
+      overflow: visible !important;
+    }
+    #tabbed-content > div {
+      overflow: hidden !important;
+    }
+  }
+
+  /* Scale overrides within tabbed content */
+  .tab--content.scale-enabled .payload-richtext ul,
+  .tab--content.scale-enabled .payload-richtext li,
+  .tab--content.scale-enabled .payload-richtext p,
+  .tab--content.scale-enabled .payload-richtext span {
+    /* font-size: calc(var(--dd-scale, 1) * 12px); */
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  @screen md {
+    .tab--content.scale-enabled .payload-richtext ul,
+    .tab--content.scale-enabled .payload-richtext li,
+    .tab--content.scale-enabled .payload-richtext p,
+    .tab--content.scale-enabled .payload-richtext span {
+      /* font-size: calc(var(--dd-scale, 1) * 14px); */
+      font-size: 14px;
+      line-height: 1.2;
+    }
+  }
+
+  .tab--content .download--buttons {
+    display: none !important;
+  }
+
+  @screen md {
+    .tab--content .swiper-slide .slide__item {
+      min-width: 11.375rem !important;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.nav-group__label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.btn.list-selection__button.delete-documents__toggle {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  background-color: oklch(50.5% 0.213 27.518);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  line-height: 1;
+}
+
+.btn.list-selection__button.delete-documents__toggle:hover {
+  background-color: oklch(57.7% 0.245 27.325);
+}
+
+.list-selection__actions {
+  align-items: center;
+}
