@@ -33,6 +33,8 @@ import { AboutHeroBlock } from '@/blocks/AboutHero/Component'
 import { AboutTextImageBlock } from '@/blocks/AboutTextImage/Component'
 import { AboutBannerBlock } from '@/blocks/AboutBanner/Component'
 import { AboutTextSliderBlock } from '@/blocks/AboutTextSlider/Component'
+import { ContactHeroBlock } from '@/blocks/ContactHero/Component'
+import { ContactInfoBlock } from '@/blocks/ContactInfo/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -66,6 +68,8 @@ const blockComponents = {
   aboutTextImage: AboutTextImageBlock,
   aboutBanner: AboutBannerBlock,
   aboutTextSlider: AboutTextSliderBlock,
+  contactHero: ContactHeroBlock,
+  contactInfo: ContactInfoBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -252,6 +252,8 @@ export interface Page {
     | AboutTextImageBlock
     | AboutBannerBlock
     | AboutTextSliderBlock
+    | ContactHeroBlock
+    | ContactInfoBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1966,6 +1968,64 @@ export interface AboutTextSliderBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactHeroBlock".
+ */
+export interface ContactHeroBlock {
+  /**
+   * Main heading text (e.g., "tell your dog we say hi!")
+   */
+  heading: string;
+  /**
+   * Word to highlight in coral color (e.g., "hi"). Case-insensitive match.
+   */
+  accentWord?: string | null;
+  /**
+   * Text displayed below the heading
+   */
+  description: string;
+  /**
+   * Dog photo displayed on the right side (desktop) or top (mobile)
+   */
+  dogImage: number | Media;
+  /**
+   * Small decorative graphic displayed next to the heading
+   */
+  decorativeIcon?: (number | null) | Media;
+  namePlaceholder?: string | null;
+  emailPlaceholder?: string | null;
+  messagePlaceholder?: string | null;
+  /**
+   * Text displayed on the submit button
+   */
+  submitButtonText?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'contactHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactInfoBlock".
+ */
+export interface ContactInfoBlock {
+  /**
+   * Main heading text for the contact info section
+   */
+  heading: string;
+  /**
+   * Text displayed below the heading
+   */
+  description: string;
+  emailPlaceholder?: string | null;
+  /**
+   * Text displayed on the submit button
+   */
+  submitButtonText?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'contactInfo';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -2338,6 +2398,8 @@ export interface PagesSelect<T extends boolean = true> {
         aboutTextImage?: T | AboutTextImageBlockSelect<T>;
         aboutBanner?: T | AboutBannerBlockSelect<T>;
         aboutTextSlider?: T | AboutTextSliderBlockSelect<T>;
+        contactHero?: T | ContactHeroBlockSelect<T>;
+        contactInfo?: T | ContactInfoBlockSelect<T>;
       };
   meta?:
     | T
@@ -2533,6 +2595,35 @@ export interface AboutTextSliderBlockSelect<T extends boolean = true> {
         paragraph?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactHeroBlock_select".
+ */
+export interface ContactHeroBlockSelect<T extends boolean = true> {
+  heading?: T;
+  accentWord?: T;
+  description?: T;
+  dogImage?: T;
+  decorativeIcon?: T;
+  namePlaceholder?: T;
+  emailPlaceholder?: T;
+  messagePlaceholder?: T;
+  submitButtonText?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactInfoBlock_select".
+ */
+export interface ContactInfoBlockSelect<T extends boolean = true> {
+  heading?: T;
+  description?: T;
+  emailPlaceholder?: T;
+  submitButtonText?: T;
   id?: T;
   blockName?: T;
 }
