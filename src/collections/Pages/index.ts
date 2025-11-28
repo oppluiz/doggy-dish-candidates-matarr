@@ -16,6 +16,8 @@ import { AboutHero } from '../../blocks/AboutHero/config'
 import { AboutTextImage } from '../../blocks/AboutTextImage/config'
 import { AboutBanner } from '../../blocks/AboutBanner/config'
 import { AboutTextSlider } from '../../blocks/AboutTextSlider/config'
+import { ContactHero } from '../../blocks/ContactHero/config'
+import { ContactInfo } from '../../blocks/ContactInfo/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -104,6 +106,8 @@ export const Pages: CollectionConfig<'pages'> = {
                 AboutTextImage,
                 AboutBanner,
                 AboutTextSlider,
+                ContactHero,
+                ContactInfo,
               ],
               required: true,
               admin: {
