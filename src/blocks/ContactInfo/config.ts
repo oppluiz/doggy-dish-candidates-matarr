@@ -9,11 +9,20 @@ export const ContactInfo: Block = {
   },
   fields: [
     {
+      name: 'subheading',
+      label: 'Subheading',
+      type: 'text',
+      defaultValue: 'JOIN THE DOGGY DISH™ NEWSLETTER',
+      admin: {
+        description: 'Small text displayed above the main heading',
+      },
+    },
+    {
       name: 'heading',
       label: 'Heading',
       type: 'text',
       required: true,
-      defaultValue: 'FRESH TAKES ON DOG HEALTH + WELLNESS',
+      defaultValue: 'YOUR WEEKLY FRESH FOOD SPOOP',
       admin: {
         description: 'Main heading text for the contact info section',
       },
@@ -28,6 +37,24 @@ export const ContactInfo: Block = {
       admin: {
         description: 'Text displayed below the heading',
       },
+    },
+    {
+      name: 'dogImages',
+      label: 'Dog Images',
+      type: 'array',
+      maxRows: 6,
+      admin: {
+        description: 'Up to 6 circular dog images displayed on the left (desktop only)',
+      },
+      fields: [
+        {
+          name: 'image',
+          label: 'Image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+      ],
     },
     {
       name: 'emailPlaceholder',

@@ -2008,6 +2008,10 @@ export interface ContactHeroBlock {
  */
 export interface ContactInfoBlock {
   /**
+   * Small text displayed above the main heading
+   */
+  subheading?: string | null;
+  /**
    * Main heading text for the contact info section
    */
   heading: string;
@@ -2015,6 +2019,15 @@ export interface ContactInfoBlock {
    * Text displayed below the heading
    */
   description: string;
+  /**
+   * Up to 6 circular dog images displayed on the left (desktop only)
+   */
+  dogImages?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
   emailPlaceholder?: string | null;
   /**
    * Text displayed on the submit button
@@ -2620,8 +2633,15 @@ export interface ContactHeroBlockSelect<T extends boolean = true> {
  * via the `definition` "ContactInfoBlock_select".
  */
 export interface ContactInfoBlockSelect<T extends boolean = true> {
+  subheading?: T;
   heading?: T;
   description?: T;
+  dogImages?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
   emailPlaceholder?: T;
   submitButtonText?: T;
   id?: T;

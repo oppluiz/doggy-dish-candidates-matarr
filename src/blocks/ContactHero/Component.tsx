@@ -85,31 +85,31 @@ export const ContactHeroBlock: React.FC<Props> = ({
           {/* Left Column - Form */}
           <div className="order-2 md:order-1 flex flex-col justify-center px-6 md:px-0 md:pl-[84px] md:pr-[50px] py-12 md:py-0">
             {/* Heading with decorative icon */}
-            <div className="flex items-start justify-center md:justify-start gap-2 mb-4 md:mb-6">
+            <div className="relative mb-4 md:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <h1 className={headingClassName}>
                 {renderHeading()}
+                {decorativeIcon && typeof decorativeIcon === 'object' && (
+                  <span className="inline-block ml-2 w-[37px] h-[33px] md:w-[57px] md:h-[51px] align-middle">
+                    <Media
+                      resource={decorativeIcon}
+                      className="w-full h-full"
+                      imgClassName="object-contain w-full h-full"
+                    />
+                  </span>
+                )}
               </h1>
-              {decorativeIcon && typeof decorativeIcon === 'object' && (
-                <div className="w-[37px] h-[33px] md:w-[57px] md:h-[51px] flex-shrink-0 mt-[8px] md:mt-[12px]">
-                  <Media
-                    resource={decorativeIcon}
-                    className="w-full h-full"
-                    imgClassName="object-contain w-full h-full"
-                  />
-                </div>
-              )}
             </div>
 
             {/* Description */}
             {description && (
-              <p className="text-[12px] md:text-[14px] font-lato font-light leading-[1.6] text-center md:text-left mb-8 md:mb-12 max-w-full md:max-w-[376px] mx-auto md:mx-0">
+              <p className="text-[12px] md:text-[14px] font-lato font-light leading-[1.6] text-center md:text-left mb-8 md:mb-12 max-w-full md:max-w-[376px] mx-auto md:mx-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
                 {description}
               </p>
             )}
 
             {/* Form */}
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="w-full max-w-full md:max-w-[448px] mx-auto md:mx-0">
+              <form onSubmit={handleSubmit} className="w-full max-w-full md:max-w-[448px] mx-auto md:mx-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
                 {/* Name Field */}
                 <div className="relative mb-8 md:mb-12">
                   <input
@@ -200,13 +200,13 @@ export const ContactHeroBlock: React.FC<Props> = ({
           </div>
 
           {/* Right Column - Dog Image */}
-          <div className="order-1 md:order-2 relative flex items-center justify-center md:justify-start">
+          <div className="order-1 md:order-2 relative flex items-center justify-center md:justify-start animate-in fade-in slide-in-from-right duration-1000">
             {/* Coral Background Circle - positioned to extend beyond container */}
             <div className="absolute top-0 md:top-[-66px] left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[246px] md:w-[664px] h-[394px] md:h-[1051px] bg-[#EE6C4D] rounded-b-[150px] md:rounded-b-[300px]" />
 
             {/* Dog Image */}
             {dogImage && typeof dogImage === 'object' && (
-              <div className="relative w-[246px] md:w-[664px] h-[394px] md:h-[1051px] rounded-b-[150px] md:rounded-b-[300px] overflow-hidden z-10">
+              <div className="relative w-[246px] md:w-[664px] h-[394px] md:h-[1051px] rounded-b-[150px] md:rounded-b-[300px] overflow-hidden z-10 -translate-y-[35px]">
                 <Media
                   resource={dogImage}
                   className="w-full h-full"
