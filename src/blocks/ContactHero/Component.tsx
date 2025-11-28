@@ -150,29 +150,20 @@ export const ContactHeroBlock: React.FC<Props> = ({
                 </div>
 
                 {/* Submit Button */}
-                <div className="flex justify-center md:justify-end items-center gap-3">
+                <div className="flex justify-center md:justify-end items-center">
                   <button
                     type="submit"
-                    className="bg-[#41A690] hover:bg-[#359179] text-[#FFFFF8] px-8 py-3 rounded-full text-[12px] md:text-[14px] font-lato uppercase tracking-[0.1em] transition-all duration-300 font-normal"
+                    className="bg-[#41A690] hover:bg-[#359179] text-[#FFFFF8] px-8 py-3 rounded-full text-[12px] md:text-[14px] font-lato uppercase tracking-[0.1em] transition-all duration-300 font-normal flex items-center gap-2"
                   >
                     {submitButtonText}
-                  </button>
-                  <div className="w-10 h-10 bg-[#FFFFF8] rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors">
-                    <svg
-                      className="w-6 h-6"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3"
-                        stroke="#000"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                    <span className="bg-white rounded-full p-1 flex items-center justify-center">
+                      <img
+                        src="https://static.showit.co/200/DQZWjP3OIRwqF3MCY7JEAA/shared/untitled_design_38.png"
+                        alt=""
+                        className="w-4 h-4"
                       />
-                    </svg>
-                  </div>
+                    </span>
+                  </button>
                 </div>
               </form>
             ) : (

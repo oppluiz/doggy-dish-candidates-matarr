@@ -44,22 +44,22 @@ export const ContactInfoBlock: React.FC<Props> = ({
   }
 
   return (
-    <section className={cn('relative w-full bg-[#41A690] max-h-[690px] py-12 md:py-16 overflow-hidden', className)}>
+    <section className={cn('relative w-full bg-[#41A690] md:max-h-[690px] py-12 md:py-16 overflow-hidden', className)}>
       <div className="container max-w-[1200px] mx-auto px-6 md:px-[84px]">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left Column - Dog Images */}
           {dogImages && dogImages.length > 0 && (
-            <div className="hidden md:grid grid-cols-2 gap-4 max-w-[320px] -translate-y-[140px]">
+            <div className="grid grid-cols-3 md:grid-cols-2 gap-3 md:gap-4 max-w-full md:max-w-[320px] md:-translate-y-[140px]">
               {dogImages.slice(0, 6).map((item: any, index) => {
-                // Varying heights for masonry effect - all portrait orientation
-                const heights = ['h-[246px]', 'h-[246px]', 'h-[246px]', 'h-[246px]', 'h-[246px]', 'h-[246px]']
-                const marginTops = ['mt-0', 'mt-8', 'mt-4', 'mt-0', 'mt-6', 'mt-2']
+                // Varying heights for masonry effect - all portrait orientation (desktop) / uniform (mobile)
+                const heights = ['h-[120px] md:h-[246px]', 'h-[120px] md:h-[246px]', 'h-[120px] md:h-[246px]', 'h-[120px] md:h-[246px]', 'h-[120px] md:h-[246px]', 'h-[120px] md:h-[246px]']
+                const marginTops = ['mt-0', 'md:mt-8', 'md:mt-4', 'mt-0', 'md:mt-6', 'md:mt-2']
                 const delays = ['delay-0', 'delay-150', 'delay-300', 'delay-[450ms]', 'delay-[600ms]', 'delay-[750ms]']
 
                 return (
                   <div
                     key={index}
-                    className={`relative overflow-hidden rounded-[80px] w-full ${heights[index]} ${marginTops[index]} animate-in fade-in slide-in-from-top duration-700 ${delays[index]}`}
+                    className={`relative overflow-hidden rounded-[60px] md:rounded-[80px] w-full ${heights[index]} ${marginTops[index]} animate-in fade-in slide-in-from-top duration-700 ${delays[index]}`}
                   >
                     {item?.image && typeof item.image === 'object' && (
                       <Media

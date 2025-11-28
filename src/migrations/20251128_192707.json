@@ -1,5 +1,5 @@
 {
-  "id": "a8f05613-4ce9-4404-9c85-41a23394adee",
+  "id": "40a218d8-a341-4c00-a521-ac72e8c7a046",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -3001,14 +3001,14 @@
           "type": "varchar",
           "primaryKey": false,
           "notNull": false,
-          "default": "'FRESH TAKES ON DOG HEALTH + WELLNESS'"
+          "default": "'YOUR WEEKLY FRESH FOOD SPOOP'"
         },
         "description": {
           "name": "description",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false,
-          "default": "'We make it short, sweet, and packed with tasty tidbits you won''t find anywhere else. Subscribe to our newsletter and get the inside scoop on keeping your dog at their best for their best years yet. Because we''re rooting for your pup!'"
+          "default": "'Ever wish you had a dog-loving, fresh-feeding expert who dished out easy recipes, vet-backed advice, and fresh food tips for free? That''s us, right in your inbox each week! Join our community of devoted dog parents and get emails your dog will thank you for. Because when it comes to your pup''s health, you deserve a helping hand (or paw).!'"
         },
         "email_placeholder": {
           "name": "email_placeholder",
@@ -6797,14 +6797,14 @@
           "type": "varchar",
           "primaryKey": false,
           "notNull": false,
-          "default": "'FRESH TAKES ON DOG HEALTH + WELLNESS'"
+          "default": "'YOUR WEEKLY FRESH FOOD SPOOP'"
         },
         "description": {
           "name": "description",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false,
-          "default": "'We make it short, sweet, and packed with tasty tidbits you won''t find anywhere else. Subscribe to our newsletter and get the inside scoop on keeping your dog at their best for their best years yet. Because we''re rooting for your pup!'"
+          "default": "'Ever wish you had a dog-loving, fresh-feeding expert who dished out easy recipes, vet-backed advice, and fresh food tips for free? That''s us, right in your inbox each week! Join our community of devoted dog parents and get emails your dog will thank you for. Because when it comes to your pup''s health, you deserve a helping hand (or paw).!'"
         },
         "email_placeholder": {
           "name": "email_placeholder",

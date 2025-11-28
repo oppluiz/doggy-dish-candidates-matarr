@@ -33,7 +33,7 @@ export const ContactInfo: Block = {
       type: 'textarea',
       required: true,
       defaultValue:
-        "We make it short, sweet, and packed with tasty tidbits you won't find anywhere else. Subscribe to our newsletter and get the inside scoop on keeping your dog at their best for their best years yet. Because we're rooting for your pup!",
+        "Ever wish you had a dog-loving, fresh-feeding expert who dished out easy recipes, vet-backed advice, and fresh food tips for free? That's us, right in your inbox each week! Join our community of devoted dog parents and get emails your dog will thank you for. Because when it comes to your pup's health, you deserve a helping hand (or paw).!",
       admin: {
         description: 'Text displayed below the heading',
       },
